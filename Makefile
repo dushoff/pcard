@@ -31,6 +31,7 @@ Sources += accounts.txt
 in/accounts.txt: accounts.txt
 	$(copy)
 
+Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
 
