@@ -4,8 +4,6 @@ current: target
 -include target.mk
 Ignore = target.mk
 
-# -include makestuff/perl.def
-
 vim_session:
 	bash -cl "vmt"
 
@@ -17,7 +15,7 @@ mirrors += 2407
 ## 2407.month:
 Ignore += in
 %.month:
-	- $(RM) in
+	- $(RM) in *.pdf
 	$(LN) $* in
 
 ######################################################################
@@ -29,66 +27,63 @@ current.pdf: $(wildcard in/bmo*.pdf in/BMO*.pdf)
 	$(copy)
 
 ## Make file list and check accounts
-accounts.trim.txt.pdf: in/accounts.txt
+Sources += accounts.txt
+in/accounts.txt: accounts.txt
+	$(copy)
 
-## Receipts
-files = bill.pdf
-files += outbreak.X.receipt.pdf bell.X.receipt.pdf tv.X.receipt.pdf equipment.X.receipt.pdf everywhere.X.receipt.pdf computer.X.receipt.pdf dropbox.X.receipt.pdf
-## outbreak.pdf ##
-## bell.pdf ##
-## tv.pdf ##
+atrim.txt: in/accounts.txt
+	sed -e "s/##*  *.*//" $< > $@
 
-## publication.pdf ##
-## dropbox.pdf ## dropbox.com/avatar (JD)/settings/billing
-## everywhere.pdf ##
-## equipment.pdf ##
-## computer.pdf ##
-
-## Tag the first page, unless it's too crowded
+## Tag the first page, unless it's too crowded 
 ## The y number is going down from the top: more negative is down
-tag.pdf: accounts.txt.pdf current-0.pdf Makefile
+tag.pdf: atrim.txt.pdf current-0.pdf Makefile
 	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
 
 ## Mark receipts with numbers (DELETE extra lines)
 ## We may need to mark a tagged page or an untagged page
 ## Sometimes tags go on following page for space
-io = -stdin -stdout |
-mark.pdf: tag.pdf Makefile
-	cat $< | \
-	cpdf -add-text "1" -pos-left "20 380" -font-size 15 $(io) \
-	cpdf -add-text "2" -pos-left "20 350" -font-size 15 $(io) \
-	cpdf -add-text "3" -pos-left "20 320" -font-size 15 $(io) \
-	cpdf -add-text "4" -pos-left "20 290" -font-size 15 $(io) \
-	cpdf -add-text "5" -pos-left "20 260" -font-size 15 $(io) \
-	cpdf -add-text "6" -pos-left "20 230" -font-size 15 $(io) \
-	cat > $@
+mark.pdf: tag.pdf in/mark.mk
+	$(mark)
+
+Sources += mark.mk
+in/mark.mk: mark.mk
+	$(copy)
+-include in/mark.mk
 
 ## Make the bill from tagged and marked pages (which may be the same, or different)
+## It's been the same for a long time now
 bill.pdf: mark.pdf
 	pdfjam $^ --outfile $@
 
-dushoff2024XXpcard.pdf: $(files) 
-	pdfjam $(filter-out Makefile, $^) --outfile $@
-
-## Copy down-called files
-outbreak.pdf: $(wildcard github*.pdf)
+## Receipts
+Sources += receipts.mk
+in/receipts.mk: receipts.mk
 	$(copy)
+-include in/receipts.mk
 
-bell.pdf: $(wildcard Bell*.pdf)
+pcard.pdf: in/receipts.mk $(files)
+	pdfjam $(filter-out .mk, $^) --outfile $@
+
+out/dushoff2024XXpcard.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
 
-export ms=~/screens/makestuff
+## moved from makestuff/receipts.mk
 
-Makefile: makestuff/Makefile
-makestuff/Makefile:
-	ln -s $(ms) .
+%.1.receipt.pdf: page=1
+%.2.receipt.pdf: page=2
+%.3.receipt.pdf: page=3
+%.4.receipt.pdf: page=4
+%.5.receipt.pdf: page=5
+%.6.receipt.pdf: page=6
+%.7.receipt.pdf: page=7
+%.8.receipt.pdf: page=8
+%.1.receipt.pdf %.2.receipt.pdf %.3.receipt.pdf %.4.receipt.pdf %.5.receipt.pdf %.6.receipt.pdf %.7.receipt.pdf %.8.receipt.pdf: in/%.pdf
+	cpdf -add-text "$(page)" -topright 30 -font-size 24 $< -o $@
 
-Sources += accounts.txt
-in/accounts.txt: accounts.txt
-	$(copy)
-
+%.png.pdf: %.png
+	$(convert)
 
 ######################################################################
 
@@ -109,9 +104,7 @@ makestuff:
 
 -include makestuff/os.mk
 
-## -include makestuff/pipeR.mk
 -include makestuff/forms.mk
--include makestuff/receipts.mk
 -include makestuff/mirror.mk
 
 -include makestuff/git.mk
