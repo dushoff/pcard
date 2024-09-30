@@ -15,11 +15,14 @@ mirrors += out
 mirrors += 2407
 
 ## 2407.month:
+Ignore += in
 %.month:
 	- $(RM) in
 	$(LN) $* in
 
 ######################################################################
+
+Ignore += $(wildcard *.pdf)
 
 ### Check current
 current.pdf: $(wildcard in/bmo*.pdf in/BMO*.pdf)
