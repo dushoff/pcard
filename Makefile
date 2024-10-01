@@ -5,16 +5,20 @@ current: target
 Ignore = target.mk
 
 vim_session:
-	bash -cl "vmt"
+	bash -cl "vmt notes.md"
+
+######################################################################
+
+Sources += notes.md
 
 ######################################################################
 
 mirrors += out
-mirrors += 2407
+mirrors += 2407 2408
 
-## 2407.month:
+## 2408.month:
 Ignore += in
-%.month:
+%.month: %
 	- $(RM) in *.pdf
 	$(LN) $* in
 
@@ -47,8 +51,8 @@ mark.pdf: tag.pdf in/mark.mk
 	$(mark)
 
 Sources += mark.mk
-in/mark.mk: mark.mk
-	$(copy)
+in/mark.mk: | mark.mk
+	$(pcopy)
 -include in/mark.mk
 
 ## Make the bill from tagged and marked pages (which may be the same, or different)
@@ -57,15 +61,17 @@ bill.pdf: mark.pdf
 	pdfjam $^ --outfile $@
 
 ## Receipts
+## in/bell.pdf
+## in/outbreak.pdf
 Sources += receipts.mk
-in/receipts.mk: receipts.mk
-	$(copy)
+in/receipts.mk: | receipts.mk
+	$(pcopy)
 -include in/receipts.mk
 
 pcard.pdf: in/receipts.mk $(files)
-	pdfjam $(filter-out .mk, $^) --outfile $@
+	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2024XXpcard.pdf: pcard.pdf
+out/dushoff2024JulPcard.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
