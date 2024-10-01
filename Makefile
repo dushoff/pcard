@@ -13,6 +13,7 @@ mirrors += out
 mirrors += 2407
 
 ## 2407.month:
+## Test making in a source which is just a symlink?
 Ignore += in
 %.month: | %
 	- $(RM) in *.pdf
