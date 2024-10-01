@@ -63,6 +63,7 @@ bill.pdf: mark.pdf
 ## Receipts
 ## in/bell.pdf
 ## in/outbreak.pdf
+## in/tv.pdf
 Sources += receipts.mk
 in/receipts.mk: | receipts.mk
 	$(pcopy)
@@ -71,7 +72,7 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2024JulPcard.pdf: pcard.pdf
+out/dushoff2024Aug.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
