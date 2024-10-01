@@ -14,7 +14,7 @@ mirrors += 2407
 
 ## 2407.month:
 Ignore += in
-%.month:
+%.month: | %
 	- $(RM) in *.pdf
 	$(LN) $* in
 
