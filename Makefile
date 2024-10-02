@@ -21,6 +21,7 @@ Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
+	$(MAKE) $*.get
 	$(LN) $* in
 	$(LN) $*_markup markup
 
@@ -104,7 +105,7 @@ Sources += Makefile
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
-Makefile: makestuff/00.stamp
+Makefile: makestuff/01.stamp
 makestuff/%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull
