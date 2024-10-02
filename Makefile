@@ -16,6 +16,9 @@ Sources += notes.md
 mirrors += out
 mirrors += 2407 2408 2409
 
+%_markup:
+	$(mkdir)
+
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 ## 2408.month:
 Ignore += in
