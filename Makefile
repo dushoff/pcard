@@ -16,11 +16,13 @@ Sources += notes.md
 mirrors += out
 mirrors += 2407 2408 2409
 
+Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 ## 2408.month:
 Ignore += in
-%.month: %
-	- $(RM) in *.pdf
+%.month: % %_markup
+	- $(RM) in markup *.pdf
 	$(LN) $* in
+	$(LN) $*_markup markup
 
 ######################################################################
 
