@@ -22,6 +22,7 @@ mirrors += $(tmirrors)
 	$(mkdir)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
+Ignore += markup
 ## 2409.month:
 Ignore += in
 %.month: % %_markup
