@@ -1,4 +1,8 @@
 
+This directory; made in a bit of a scramble when Dropbox died
+
+----------------------------------------------------------------------
+
 AP instructions about receipts:
 * ugly.pdf
 

@@ -14,13 +14,18 @@ Sources += notes.md
 ######################################################################
 
 mirrors += out
-mirrors += 2407 2408 2409
+tmirrors += 2409
+mirrors += $(tmirrors)
+
+## Need to change the variable after you do this
+manual:
+	$(MV) $(tmirrors) out
 
 %_markup:
 	$(mkdir)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
-## 2408.month:
+## 2409.month:
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
