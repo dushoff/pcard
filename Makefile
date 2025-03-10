@@ -14,12 +14,9 @@ Sources += notes.md
 ######################################################################
 
 mirrors += out
-tmirrors += 2409
+## Move these into subdirectories when done I guess
+tmirrors += 2409 2410 2411 2412 2502
 mirrors += $(tmirrors)
-
-## Need to change the variable after you do this
-manual:
-	$(MV) $(tmirrors) out
 
 %_markup:
 	$(mkdir)
