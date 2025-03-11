@@ -23,7 +23,7 @@ mirrors += $(tmirrors)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 Ignore += markup
-## 2409.month:
+## 2410.month:
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
@@ -111,7 +111,7 @@ Sources += Makefile
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
-Makefile: makestuff/01.stamp
+Makefile: makestuff/02.stamp
 makestuff/%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull
