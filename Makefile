@@ -13,7 +13,7 @@ Sources += notes.md todo.md flow.md
 
 ######################################################################
 
-mirrors += out
+mirrors += out cloud
 ## Move these into subdirectories when done I guess
 tmirrors += 2409 2410 2411 2412 2502
 mirrors += $(tmirrors)
@@ -48,7 +48,8 @@ Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
 
-## Tag the first page, unless it's too crowded 
+## Add account numbers (tags) to the first page
+## Or sometimes do something else, but I no longer remember whta
 ## The y number is going down from the top: more negative is down
 tag.pdf: atrim.txt.pdf current-0.pdf Makefile
 	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
@@ -56,6 +57,7 @@ tag.pdf: atrim.txt.pdf current-0.pdf Makefile
 ## Mark receipts with numbers (DELETE extra lines)
 ## We may need to mark a tagged page or an untagged page
 ## Sometimes tags go on following page for space
+## mark location moved for the first time in years 2025 Mar 10 (Mon)
 mark.pdf: tag.pdf in/mark.mk
 	$(mark)
 
@@ -81,7 +83,7 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2024Aug.pdf: pcard.pdf
+out/dushoff2024Sep.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################

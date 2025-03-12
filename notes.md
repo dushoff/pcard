@@ -4,10 +4,12 @@ This directory; made in a bit of a scramble when Dropbox died
 ----------------------------------------------------------------------
 
 AP instructions about receipts:
-* ugly.pdf
+* cloud/ugly.pdf
 
 Reimbursing Mac (attach something to statement and email thing to aphelp)
-* apReimburse.pdf (not necessary to redo setup part)
+* cloud/apReimburse.pdf (not necessary to redo setup part)
+
+* Use “print” button to get the correct confirmation page (oops!)
 
 https://www.bmospenddynamics.com/
 eStatement (upper left) to generate reports (one by one)
