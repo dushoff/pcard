@@ -23,7 +23,7 @@ mirrors += $(tmirrors)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 Ignore += markup
-## 2410.month:
+## 2411.month:
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
@@ -83,7 +83,7 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2024Sep.pdf: pcard.pdf
+out/dushoff2024Nov.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
