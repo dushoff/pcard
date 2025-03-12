@@ -1,12 +1,11 @@
+DONE through 2502 (there was no 2510 bill)
 
-## Use nominal date; these will often be billed one month later
-* mv cloud/Bell2410.pdf in/bell.pdf ##
-* mv cloud/Bell2411.pdf in/bellagain.pdf ##
-* cloud/Bell2412.pdf ##
-* cloud/Bell2501.pdf
+## Bell: Use nominal date; these will often be billed one month later
+* mv cloud/Bell2501.pdf in/bellagain.pdf ## 10.36
+
+Reimburse these! (paid by 8160)
+* cloud/outbreak2501.pdf
+* cloud/outbreak2501x.pdf
 
 rclone craziness!
 * mv cloud/Bell2502.pdf out/
-
-2501 may not have a bill?
-* it is between credit cards after some sort of scam and then snail-mail confusion

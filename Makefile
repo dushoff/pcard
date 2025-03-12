@@ -5,7 +5,7 @@ current: target
 Ignore = target.mk
 
 vim_session:
-	bash -cl "vmt notes.md"
+	bash -cl "vmt notes.md in/accounts.txt in/mark.mk in/receipts.mk"
 
 ######################################################################
 
@@ -15,7 +15,7 @@ Sources += notes.md todo.md flow.md
 
 mirrors += out cloud
 ## Move these into subdirectories when done I guess
-tmirrors += 2409 2410 2411 2412 2502
+tmirrors += 2409 2410 2411 2412 2501 2502
 mirrors += $(tmirrors)
 
 %_markup:
@@ -23,7 +23,7 @@ mirrors += $(tmirrors)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 Ignore += markup
-## 2411.month:
+## 2502.month:
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
@@ -83,7 +83,7 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2024Nov.pdf: pcard.pdf
+out/dushoff2025Feb.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
