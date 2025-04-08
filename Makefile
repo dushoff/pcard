@@ -15,15 +15,25 @@ Sources += notes.md todo.md flow.md
 
 mirrors += out cloud
 ## Move these into subdirectories when done I guess
-tmirrors += 2409 2410 2411 2412 2501 2502
+tmirrors += 2503
+oldmirrors += 2407 2408
 mirrors += $(tmirrors)
+
+## Old stuff is living _only_ in the cloud for now, witg?
+archive_all: $(oldmirrors:%=%.archive)
+%.archive: 
+	rm -fr $*/ $*_markup/ $*.*
+
+######################################################################
+
+## Make stuff from here using current/in etc (don't need to svs)
 
 %_markup:
 	$(mkdir)
 
 Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
 Ignore += markup
-## 2502.month:
+## 2503.month:
 Ignore += in
 %.month: % %_markup
 	- $(RM) in markup *.pdf
