@@ -19,10 +19,11 @@ tmirrors += 2503
 oldmirrors += 2407 2408
 mirrors += $(tmirrors)
 
-## Old stuff is living _only_ in the cloud for now, witg?
+## Old stuff is living _only_ in the cloud (and the history) for now, witg?
 archive_all: $(oldmirrors:%=%.archive)
 %.archive: 
-	rm -fr $*/ $*_markup/ $*.*
+	rm -fr $*/ $*.*
+	git rm -fr $*_markup/ 
 
 ######################################################################
 
