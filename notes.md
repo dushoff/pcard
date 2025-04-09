@@ -19,5 +19,9 @@ eStatement (upper left) to generate reports (one by one)
 * There's a hot link for most recent eStatement (if you keep up to date)
 Report Outbox to get them (eventually)
 
+Bell; Posting date is when you PAY
+So you do know where it should go, if it's the middle of a month
 * https://mybell.bell.ca/Login
 * Log in as Chyun for internet
+* Pay bill with two credit cards 
+* cloud/bellNow.pdf

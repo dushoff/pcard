@@ -15,7 +15,7 @@ Sources += notes.md todo.md flow.md
 
 mirrors += out cloud
 ## Move these into subdirectories when done I guess
-tmirrors += 2503
+tmirrors += 2503 2504
 oldmirrors += 2407 2408
 mirrors += $(tmirrors)
 
@@ -29,6 +29,8 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
+## markup/ was intended for revision control of small things, but apparently not used. Right now they're backed up in headless cloud
+## Consider deleting 2025 Apr 09 (Wed)
 %_markup:
 	$(mkdir)
 
