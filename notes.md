@@ -9,6 +9,9 @@ AP instructions about receipts:
 Reimbursing Mac (attach something to statement and email thing to aphelp)
 * cloud/apReimburse.pdf (not necessary to redo setup part)
 
+AP instructions about mosaic (parts seem outdated)
+cloud/apMosaic.pdf
+
 * Use “print” button to get the correct confirmation page (oops!)
 
 https://www.bmospenddynamics.com/
