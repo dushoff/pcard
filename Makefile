@@ -64,7 +64,7 @@ atrim.txt: in/accounts.txt
 ## Add account numbers (tags) to the first page
 ## Or sometimes do something else, but I no longer remember whta
 ## The y number is going down from the top: more negative is down
-tag.pdf: atrim.txt.pdf current-0.pdf Makefile
+tag.pdf: atrim.txt.pdf current-0.pdf
 	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
 
 ## Mark receipts with numbers (DELETE extra lines)
@@ -87,7 +87,7 @@ bill.pdf: mark.pdf
 ## Receipts
 ## in/bell.pdf
 ## in/outbreak.pdf
-## in/tv.pdf
+## in/equip.pdf
 Sources += receipts.mk
 in/receipts.mk: | receipts.mk
 	$(pcopy)
@@ -96,7 +96,8 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-out/dushoff2025Feb.pdf: pcard.pdf
+## mail to Susan, right?
+out/dushoff2025Mar.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################

@@ -24,4 +24,6 @@ So you do know where it should go, if it's the middle of a month
 * https://mybell.bell.ca/Login
 * Log in as Chyun for internet
 * Pay bill with two credit cards 
-* cloud/bellNow.pdf
+
+Should not really be necessary
+* mv cloud/bellNow.pdf 2504/bell.pdf ##
