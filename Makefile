@@ -16,14 +16,13 @@ Sources += notes.md todo.md flow.md
 mirrors += out cloud
 ## Move these into subdirectories when done I guess
 tmirrors += 2503 2504
-oldmirrors += 2407 2408
+oldmirrors += 2407 2408 2409 2410 2411 2412 2501 2502
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
 archive_all: $(oldmirrors:%=%.archive)
 %.archive: 
 	rm -fr $*/ $*.*
-	git rm -fr $*_markup/ 
 
 ######################################################################
 
