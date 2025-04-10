@@ -28,20 +28,13 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-## markup/ was intended for revision control of small things, but apparently not used. Right now they're backed up in headless cloud
-## Consider deleting 2025 Apr 09 (Wed)
-%_markup:
-	$(mkdir)
-
-Sources += $(wildcard *_markup/*.txt *_markup/*.mk)
-Ignore += markup
-## 2503.month:
+Makefile: 2503.month
 Ignore += in
-%.month: % %_markup
-	- $(RM) in markup *.pdf
-	$(MAKE) $*.get
+Ignore += *.month
+%.month: %
+	- $(RM) in *.pdf
 	$(LN) $* in
-	$(LN) $*_markup markup
+	touch $@
 
 ######################################################################
 
