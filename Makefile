@@ -73,13 +73,14 @@ in/mark.mk: | mark.mk
 
 ## Make the bill from tagged and marked pages (which may be the same, or different)
 ## It's been the same for a long time now
-bill.pdf: mark.pdf
+bill.pdf: mark.pdf | in/mark.mk
 	pdfjam $^ --outfile $@
 
 ## Receipts
 ## in/bell.pdf
 ## in/outbreak.pdf
 ## in/equip.pdf
+## in/meeting.pdf
 Sources += receipts.mk
 in/receipts.mk: | receipts.mk
 	$(pcopy)

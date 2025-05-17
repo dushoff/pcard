@@ -4,7 +4,7 @@
 
 2: 20-590000-10323-30001 (001029760) ## PDA
 .br
-See also TV payment attached
+TV paid separately
 
 55-600001-10323-RFMAC-10531134 ## NSERC
 55-600001-10323-RFMAC-20024503 ## PHAC contract
