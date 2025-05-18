@@ -10,6 +10,3 @@ DOWNLOADED 2504
 Reimburse these! (paid by 8160)
 * cloud/outbreak2501.pdf
 * cloud/outbreak2501x.pdf
-
-rclone craziness!
-* mv cloud/Bell2502.pdf out/
