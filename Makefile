@@ -15,8 +15,9 @@ Sources += notes.md todo.md flow.md
 
 mirrors += out cloud
 ## Move these into subdirectories when done I guess
-tmirrors += 2504
-oldmirrors += 2503
+tmirrors += 2505 2506 2507
+oldmirrors += 2504
+oldmirrors += 2406 2407 2408 2409
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -28,7 +29,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2504.month
+Makefile: 2505.month
 Ignore += in
 Ignore += *.month
 %.month: %
