@@ -83,7 +83,8 @@ bill.pdf: mark.pdf | in/mark.mk
 ## in/equip.pdf
 ## in/meeting.pdf
 ## in/late.pdf
-Sources += receipts.mk
+
+## Why is LN not working here?
 in/receipts.mk: | receipts.mk
 	$(pcopy)
 -include in/receipts.mk
@@ -91,8 +92,16 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
+in/outbreak.pdf:
+	$(CP) in/github*.pdf $@
+in/bell.pdf:
+	$(CP) in/Bell*.pdf $@
+Sources += receipts.mk
+
+######################################################################
+
 ## mail to Susan
-out/dushoff2025Apr.pdf: pcard.pdf
+out/dushoff2025May.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
