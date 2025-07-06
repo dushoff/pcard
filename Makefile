@@ -97,7 +97,7 @@ out/dushoff2025Apr.pdf: pcard.pdf
 
 ######################################################################
 
-## moved from makestuff/receipts.mk
+## moved from makestuff/receipts.mk; but also still there apparently
 
 %.1.receipt.pdf: page=1
 %.2.receipt.pdf: page=2
