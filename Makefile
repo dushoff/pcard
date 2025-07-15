@@ -55,7 +55,7 @@ atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
 
 ## Add account numbers (tags) to the first page
-## Or sometimes do something else, but I no longer remember whta
+## Or sometimes do something else, but I no longer remember what
 ## The y number is going down from the top: more negative is down
 tag.pdf: atrim.txt.pdf current-0.pdf
 	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
@@ -101,7 +101,7 @@ Sources += receipts.mk
 ######################################################################
 
 ## mail to Susan
-out/dushoff2025May.pdf: pcard.pdf
+out/dushoff2025Jun.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
