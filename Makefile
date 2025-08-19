@@ -29,7 +29,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2506.month
+Makefile: 2507.month
 Ignore += in
 Ignore += *.month
 %.month: %
