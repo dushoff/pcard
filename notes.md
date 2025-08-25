@@ -21,6 +21,7 @@ Report Outbox to get them (eventually)
 
 Bell; Posting date is when you PAY
 So you do know where it should go, if it's the middle of a month
+I paid the Jun bill in mid-July, so I reconcile it with the July bill (in August)
 * https://mybell.bell.ca/Login
 * Log in as Chyun for internet
 * Pay bill with two credit cards 
