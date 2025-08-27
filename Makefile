@@ -17,7 +17,6 @@ mirrors += out cloud
 ## Move these into subdirectories when done I guess
 tmirrors += 2507 2508
 oldmirrors += 2504 2505 2506
-oldmirrors += 2406 2407 2408 2409
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -101,7 +100,7 @@ Sources += receipts.mk
 ######################################################################
 
 ## mail to Susan
-out/dushoff2025Jun.pdf: pcard.pdf
+out/dushoff2025Jul.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
