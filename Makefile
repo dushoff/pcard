@@ -99,7 +99,7 @@ Sources += receipts.mk
 
 ######################################################################
 
-## mail to Susan
+## mailed to Susan 3 Sep!
 out/dushoff2025Aug.pdf: pcard.pdf
 	$(copy)
 
