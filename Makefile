@@ -5,7 +5,7 @@ current: target
 Ignore = target.mk
 
 vim_session:
-	bash -cl "vmt notes.md in/accounts.txt in/mark.mk in/receipts.mk"
+	bash -cl "vmt notes.md todo.md flow.md"
 
 ######################################################################
 
@@ -14,9 +14,8 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-## Move these into subdirectories when done I guess
-tmirrors += 2508
-oldmirrors += 2504 2505 2506 2507
+tmirrors += 2509 2510
+oldmirrors += 2508
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -28,7 +27,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2508.month
+Makefile: 2509.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -99,7 +98,7 @@ Sources += receipts.mk
 
 ######################################################################
 
-## mailed to Susan 3 Sep!
+## Make here when you mail to office
 out/dushoff2025Aug.pdf: pcard.pdf
 	$(copy)
 
