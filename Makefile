@@ -62,6 +62,7 @@ tag.pdf: atrim.txt.pdf current-0.pdf
 ## We may need to mark a tagged page or an untagged page
 ## Sometimes tags go on following page for space
 ## mark location moved for the first time in years 2025 Mar 10 (Mon)
+## ... and now it moves a bit </grumble>
 mark.pdf: tag.pdf in/mark.mk
 	$(mark)
 
@@ -82,6 +83,8 @@ bill.pdf: mark.pdf | in/mark.mk
 ## in/meeting.pdf
 ## in/late.pdf
 
+## Wondering if these included files should be PRECIOUS? Are they dropped?
+## Needed to delete two empty .mk files today. WHYY?
 ## Why is LN not working here?
 in/receipts.mk: | receipts.mk
 	$(pcopy)
@@ -90,16 +93,19 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
+## downcall in/ ## , or copy directly to the target
 in/outbreak.pdf:
 	$(CP) in/github*.pdf $@
 in/bell.pdf:
 	$(CP) in/Bell*.pdf $@
+
+## mv in/register.pdf ~/Downloads ##
 Sources += receipts.mk
 
 ######################################################################
 
 ## Make here when you mail to office
-out/dushoff2025Aug.pdf: pcard.pdf
+out/dushoff2025Sep.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
