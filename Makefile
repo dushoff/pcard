@@ -104,7 +104,7 @@ Sources += receipts.mk
 
 ######################################################################
 
-## Make here when you mail to office
+## September approved on mosaic
 out/dushoff2025Sep.pdf: pcard.pdf
 	$(copy)
 
