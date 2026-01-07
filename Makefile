@@ -105,7 +105,8 @@ Sources += receipts.mk
 ######################################################################
 
 ## September approved on mosaic
-out/dushoff2025Sep.pdf: pcard.pdf
+## October submitted to Susan
+out/dushoff2025Oct.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
