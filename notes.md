@@ -17,11 +17,9 @@ Report Outbox to get them (eventually)
 
 Bell; Posting date is when you PAY
 So you do know where it should go, if it's the middle of a month
-I paid the Jun bill in mid-July, so I reconcile it with the July bill (in August)
+Eg., I paid the Jun bill in mid-July, so I reconcile it with the July bill (processed in August, ideally)
 * https://mybell.bell.ca/Login
 * Log in as Chyun for internet
 * Pay bill with two credit cards 
 * Download (gD) bill directly or indirectly below
-
-Should not really be necessary
-* mv cloud/bellNow.pdf 2504/bell.pdf ##
+Old bills are accessed through My bill

@@ -5,6 +5,8 @@ The Bell bill is paid when we pay it, which leads to some confusion. Record when
 
 ## Making reports
 
+To start, 
+
 `make YYMM.month`
 * Now done as a Makefile dependency so that it can be set everywhere
 * This links stuff to in/ 

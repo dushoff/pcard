@@ -14,8 +14,8 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-tmirrors += 2509 2510
-oldmirrors += 2508
+tmirrors += 2510 2511 2512
+oldmirrors += 2508 2509
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -27,7 +27,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2509.month
+Makefile: 2510.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -62,6 +62,7 @@ tag.pdf: atrim.txt.pdf current-0.pdf
 ## We may need to mark a tagged page or an untagged page
 ## Sometimes tags go on following page for space
 ## mark location moved for the first time in years 2025 Mar 10 (Mon)
+## ... and now it moves a bit </grumble>
 mark.pdf: tag.pdf in/mark.mk
 	$(mark)
 
@@ -82,6 +83,8 @@ bill.pdf: mark.pdf | in/mark.mk
 ## in/meeting.pdf
 ## in/late.pdf
 
+## Wondering if these included files should be PRECIOUS? Are they dropped?
+## Needed to delete two empty .mk files today. WHYY?
 ## Why is LN not working here?
 in/receipts.mk: | receipts.mk
 	$(pcopy)
@@ -90,16 +93,20 @@ in/receipts.mk: | receipts.mk
 pcard.pdf: in/receipts.mk $(files)
 	pdfjam $(filter-out %.mk, $^) --outfile $@
 
+## downcall in/ ## , or copy directly to the target
 in/outbreak.pdf:
 	$(CP) in/github*.pdf $@
 in/bell.pdf:
 	$(CP) in/Bell*.pdf $@
+
+## mv in/register.pdf ~/Downloads ##
 Sources += receipts.mk
 
 ######################################################################
 
-## Make here when you mail to office
-out/dushoff2025Aug.pdf: pcard.pdf
+## September approved on mosaic
+## October submitted to Susan
+out/dushoff2025Oct.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
