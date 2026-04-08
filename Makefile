@@ -14,8 +14,10 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-tmirrors += 2511 2512
+
+tmirrors += 2601 2602 2603
 oldmirrors += 2508 2509 2510
+oldmirrors += 2511 2512
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -27,7 +29,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2511.month
+Makefile: 2512.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -39,11 +41,23 @@ Ignore += *.month
 
 Ignore += $(wildcard *.pdf)
 
-### Check current
+######################################################################
+
+### CHECK 
 current.pdf: $(wildcard in/bmo*.pdf in/BMO*.pdf)
 	$(copy)
 
+######################################################################
+
+### TAG
+## tag.pdf: in/accounts.txt
+tag.pdf: atrim.txt.pdf current-0.pdf
+	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
+
 ## Make file list and check accounts
+## Add account numbers (tags) to the first page
+## Or sometimes do something else, but I no longer remember what
+## The y number is going down from the top: more negative is down
 Sources += accounts.txt
 in/accounts.txt: accounts.txt
 	$(copy)
@@ -52,11 +66,10 @@ Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
 
-## Add account numbers (tags) to the first page
-## Or sometimes do something else, but I no longer remember what
-## The y number is going down from the top: more negative is down
-tag.pdf: atrim.txt.pdf current-0.pdf
-	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
+
+######################################################################
+
+## MARK
 
 ## Mark receipts with numbers (DELETE extra lines)
 ## We may need to mark a tagged page or an untagged page
@@ -76,8 +89,14 @@ in/mark.mk: | mark.mk
 bill.pdf: mark.pdf | in/mark.mk
 	pdfjam $^ --outfile $@
 
+######################################################################
+
 ## Receipts
+
+## pcard.pdf: in/receipts.mk
+
 ## in/bell.pdf
+## in/prevbell.pdf
 ## in/outbreak.pdf
 ## in/equip.pdf
 ## in/meeting.pdf
@@ -104,9 +123,10 @@ Sources += receipts.mk
 
 ######################################################################
 
-## September approved on mosaic
-## October submitted to Susan
-out/dushoff2025Oct.pdf: pcard.pdf
+## CHANGE date and submit
+
+## December submitted to Michelle
+out/dushoff2025Dec.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
