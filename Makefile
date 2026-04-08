@@ -5,7 +5,7 @@ current: target
 Ignore = target.mk
 
 vim_session:
-	bash -cl "vmt notes.md todo.md flow.md"
+	bash -ic "vmt notes.md todo.md flow.md"
 
 ######################################################################
 
@@ -14,8 +14,8 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-tmirrors += 2510 2511 2512
-oldmirrors += 2508 2509
+tmirrors += 2511 2512
+oldmirrors += 2508 2509 2510
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
