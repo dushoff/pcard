@@ -3,15 +3,12 @@
 
 #### Bell
 
-
-mv cloud/BellNovDouble.pdf in/prevBell.pdf ## May need to use this one twice?? ##
-
 cloud/BellMONTH.pdf in/Bell.pdf
 
 #### github
-mv cloud/github0927.pdf in/outbreak.pdf
+mv cloud/githubMONTH.pdf in/outbreak.pdf
 
 ## other
-mv cloud/register0930.pdf in/
+del cloud/register0930.pdf  ##
 
 2*97.18+2.63 ## 190.21 ## 196.99

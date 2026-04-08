@@ -22,4 +22,4 @@ Eg., I paid the Jun bill in mid-July, so I reconcile it with the July bill (proc
 * Log in as Chyun for internet
 * Pay bill with two credit cards 
 * Download (gD) bill directly or indirectly below
-Old bills are accessed through My bill
+Old bills are accessed through My Bell/ my bills

@@ -17,7 +17,7 @@ mirrors += out cloud
 
 tmirrors += 2601 2602 2603
 oldmirrors += 2508 2509 2510
-tmirrors += 2511 2512
+oldmirrors += 2511 2512
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -29,7 +29,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2512.month
+Makefile: 2601.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -71,6 +71,8 @@ atrim.txt: in/accounts.txt
 
 ## MARK
 
+## bill.pdf: in/mark.mk
+
 ## Mark receipts with numbers (DELETE extra lines)
 ## We may need to mark a tagged page or an untagged page
 ## Sometimes tags go on following page for space
@@ -93,10 +95,9 @@ bill.pdf: mark.pdf | in/mark.mk
 
 ## Receipts
 
-## pcard.pdf: in/receipts.mk
+## pcard.pdf: in/receipts.mk bill.pdf
 
 ## in/bell.pdf
-## in/prevbell.pdf
 ## in/outbreak.pdf
 ## in/equip.pdf
 ## in/meeting.pdf
