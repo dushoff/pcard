@@ -3,5 +3,5 @@
 files = bill.pdf
 files += outbreak.X.receipt.pdf
 files += bell.X.receipt.pdf
-files += equip.X.receipt.pdf
-files += meeting.X.receipt.pdf
+ffiles += equip.X.receipt.pdf
+ffiles += meeting.X.receipt.pdf
