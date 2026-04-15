@@ -17,7 +17,7 @@ mirrors += out cloud
 
 tmirrors += 2601 2602 2603
 oldmirrors += 2508 2509 2510
-oldmirrors += 2511 2512
+oldmirrors += 2511 2512 2503/ 2504/
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
