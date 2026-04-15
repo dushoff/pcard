@@ -17,7 +17,7 @@ mirrors += out cloud
 
 tmirrors += 2601 2602 2603
 oldmirrors += 2508 2509 2510
-oldmirrors += 2511 2512
+oldmirrors += 2511 2512 2503/ 2504/
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -29,7 +29,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2601.month
+Makefile: 2603.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -65,7 +65,6 @@ in/accounts.txt: accounts.txt
 Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
-
 
 ######################################################################
 
@@ -126,8 +125,8 @@ Sources += receipts.mk
 
 ## CHANGE date and submit
 
-## December submitted to Michelle
-out/dushoff2025Dec.pdf: pcard.pdf
+## Jan submitted to Michelle
+out/dushoff2026Mar.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
