@@ -13,7 +13,7 @@ Sources += notes.md todo.md flow.md
 
 ######################################################################
 
-## mirrors += out cloud
+mirrors += out cloud
 tmirrors += 2604
 oldmirrors += 2601 2602 2603
 oldmirrors += 2508 2509 2510
