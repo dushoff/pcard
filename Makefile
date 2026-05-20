@@ -44,15 +44,15 @@ Ignore += $(wildcard *.pdf)
 ######################################################################
 
 ### CHECK 
-current.pdf: $(wildcard in/bmo*.pdf in/BMO*.pdf)
+current.pdf: $(wildcard in/Card*.PDF in/bmo*.pdf in/BMO*.pdf)
 	$(copy)
 
 ######################################################################
 
 ### TAG
 ## tag.pdf: in/accounts.txt
-tag.pdf: atrim.txt.pdf current-0.pdf
-	cpdf -stamp-on $< -pos-left "00 -710" $(word 2, $^) -o $@
+tag.pdf: atrim.txt.pdf current-0.pdf Makefile
+	cpdf -stamp-on $< -pos-left "0 -410" $(word 2, $^) -o $@
 
 ## Make file list and check accounts
 ## Add account numbers (tags) to the first page
