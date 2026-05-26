@@ -98,6 +98,7 @@ bill.pdf: mark.pdf | in/mark.mk
 
 ## in/bell.pdf
 ## in/outbreak.pdf
+
 ## in/equip.pdf
 ## in/meeting.pdf
 ## in/late.pdf
@@ -126,7 +127,7 @@ Sources += receipts.mk
 ## CHANGE date and submit
 
 ## Jan submitted to Michelle
-out/dushoff2026Mar.pdf: pcard.pdf
+out/dushoff2026Apr.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
