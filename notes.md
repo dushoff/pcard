@@ -11,8 +11,9 @@ cloud/apMosaic.pdf
 * Use “print” button to get the correct confirmation page (oops!)
 
 https://www.bmospenddynamics.com/
+dushoff@mac:
 eStatement (upper left) to generate reports (one by one)
-* There's a hot link for most recent eStatement (if you keep up to date)
+* There's a hot link ("Download") for most recent eStatement (if you keep up to date)
 Report Outbox to get them (eventually)
 
 Bell; Posting date is when you PAY
