@@ -19,6 +19,3 @@ Reimburse the university
 ## Waiting for bill
 
 * cloud/BellPDF.pdf
-
-del cloud/Bell2501.pdf cloud/outbreak2501x.pdf cloud/Bell2412.pdf cloud/outbreak2501.pdf
-cloud/bellNow.pdf
