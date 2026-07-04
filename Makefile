@@ -49,11 +49,6 @@ current.pdf: $(wildcard in/Card*.PDF in/bmo*.pdf in/BMO*.pdf)
 
 ######################################################################
 
-### TAG
-## tag.pdf: in/accounts.txt
-tag.pdf: atrim.txt.pdf current-0.pdf Makefile
-	cpdf -stamp-on $< -pos-left "0 -410" $(word 2, $^) -o $@
-
 ## Make file list and check accounts
 ## Add account numbers (tags) to the first page
 ## Or sometimes do something else, but I no longer remember what
@@ -65,6 +60,11 @@ in/accounts.txt: accounts.txt
 Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
+
+### TAG
+## tag.pdf: in/accounts.txt
+tag.pdf: atrim.txt.pdf current-0.pdf Makefile
+	cpdf -stamp-on $< -pos-left "0 -410" $(word 2, $^) -o $@
 
 ######################################################################
 
@@ -126,8 +126,8 @@ Sources += receipts.mk
 
 ## CHANGE date and submit
 
-## May submitted to Michelle 2026 Jul 04 (Sat)
-out/dushoff2026May.pdf: pcard.pdf
+## May and Jun submitted to Michelle 2026 Jul 04 (Sat)
+out/dushoff2026Jun.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
