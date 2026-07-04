@@ -14,8 +14,8 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-tmirrors += 2605 2606
-oldmirrors += 2601 2602 2603 2604
+tmirrors += 2606
+oldmirrors += 2601 2602 2603 2604 2605
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -27,7 +27,7 @@ archive_all: $(oldmirrors:%=%.archive)
 
 ## Make stuff from here using current/in etc (don't need to svs)
 
-Makefile: 2605.month
+Makefile: 2606.month
 Ignore += in
 Ignore += *.month
 %.month: %
@@ -124,8 +124,8 @@ Sources += receipts.mk
 
 ## CHANGE date and submit
 
-## Jan submitted to Michelle
-out/dushoff2026Apr.pdf: pcard.pdf
+## May submitted to Michelle 2026 Jul 04 (Sat)
+out/dushoff2026May.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
