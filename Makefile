@@ -14,7 +14,7 @@ Sources += notes.md todo.md flow.md
 ######################################################################
 
 mirrors += out cloud
-tmirrors += 2605
+tmirrors += 2605 2606
 oldmirrors += 2601 2602 2603 2604
 mirrors += $(tmirrors)
 
