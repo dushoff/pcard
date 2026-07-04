@@ -4,12 +4,14 @@ current: target
 -include target.mk
 Ignore = target.mk
 
+-include makestuff/perl.def
+
 vim_session:
 	bash -ic "vmt notes.md todo.md flow.md"
 
 ######################################################################
 
-Sources += notes.md todo.md flow.md
+Sources += notes.md todo.md flow.md cloud.md
 
 ######################################################################
 
