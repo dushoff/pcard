@@ -7,8 +7,7 @@ The Bell bill is paid when we pay it, which leads to some confusion. Record when
 
 To start, 
 
-`make YYMM.month`
-* Now done as a Makefile dependency so that it can be set everywhere
+`make YYMM.month` into a Makefile dependency
 * This links stuff to in/ 
 
 Go through todo.md to see what receipts can be “filed”
