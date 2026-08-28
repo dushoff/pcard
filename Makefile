@@ -43,7 +43,7 @@ Ignore += $(wildcard *.pdf)
 
 ######################################################################
 
-### CHECK 
+### CHECK a dependency exists, default is in/bmo.pdf
 current.pdf: $(wildcard in/Card*.PDF in/bmo*.pdf in/BMO*.pdf)
 	$(copy)
 
@@ -125,9 +125,10 @@ Sources += receipts.mk
 ######################################################################
 
 ## CHANGE date and submit
+## Use dtarget
 
-## May and Jun submitted to Michelle 2026 Jul 04 (Sat)
-out/dushoff2026Jun.pdf: pcard.pdf
+## Jul submitted to Michelle 2026 Aug 28 (Fri)
+out/dushoff2026Jul.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
@@ -157,7 +158,7 @@ Sources += Makefile
 Ignore += makestuff
 msrepo = https://github.com/dushoff
 
-Makefile: makestuff/02.stamp
+Makefile: makestuff/03.stamp
 makestuff/%.stamp: | makestuff
 	- $(RM) makestuff/*.stamp
 	cd makestuff && $(MAKE) pull
