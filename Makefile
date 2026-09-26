@@ -15,10 +15,10 @@ Sources += notes.md todo.md flow.md cloud.md
 
 ######################################################################
 
-Makefile: 2607.month
+Makefile: 2608.month
 mirrors += out cloud
-tmirrors += 2607
-oldmirrors += 2601 2602 2603 2604 2605 2606
+tmirrors += 2608 2609
+oldmirrors += 2601 2602 2603 2604 2605 2606 2607
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
