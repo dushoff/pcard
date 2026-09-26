@@ -3,5 +3,7 @@
 files = bill.pdf
 files += outbreak.X.receipt.pdf
 files += bell.X.receipt.pdf
+
+## un-munge if needed
 ffiles += equip.X.receipt.pdf
 ffiles += meeting.X.receipt.pdf
