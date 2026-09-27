@@ -16,11 +16,14 @@ eStatement (upper left) to generate reports (one by one)
 * There's a hot link ("Download") for most recent eStatement (if you keep up to date)
 Report Outbox to get them (eventually)
 
-Bell; Posting date is when you PAY
-So you do know where it should go, if it's the middle of a month
-Eg., I paid the Jun bill in mid-July, so I reconcile it with the July bill (processed in August, ideally)
+######################################################################
+
+Bell
+
 * https://mybell.bell.ca/Login
 * Log in as Chyun for internet
-* Pay bill with two credit cards 
 * Download (gD) bill directly or indirectly below
 Old bills are accessed through My Bell/ my bills
+
+
+

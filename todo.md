@@ -3,16 +3,14 @@
 
 ## Aug bill
 
-cloud/bmoAug.pdf
-* cloud/github28Jul.pdf ## Not yet
-* cloud/Bell21Aug.pdf ## Not yet
-## anthrop9ic
-mv cloud/equip.pdf in/
-
 #### Bell
 
 ls cloud/Bell*.pdf ##
+
+## Store them here and figure out when paid, when posted
 mv cloud/BellMONTH.pdf in/Bell.pdf
+mv cloud/BellAug.pdf in/Bell.pdf ## 103.96 for internet
+mv cloud/BellSep21.pdf in/Bell.pdf ## Wrong date
 
 #### github
 mv cloud/githubMONTH.pdf in/outbreak.pdf
