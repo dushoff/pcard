@@ -7,3 +7,5 @@ files += bell.X.receipt.pdf
 ## un-munge if needed
 ffiles += equip.X.receipt.pdf
 ffiles += meeting.X.receipt.pdf
+
+## pdfjam -o in/bell.pdf in/Bell.pdf 1-4 ##
