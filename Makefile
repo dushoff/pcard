@@ -128,7 +128,7 @@ Sources += receipts.mk
 ## Use dtarget
 
 ## Jul submitted to Michelle 2026 Aug 28 (Fri)
-out/dushoff2026Jul.pdf: pcard.pdf
+out/dushoff2026Aug.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################
