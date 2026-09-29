@@ -54,8 +54,8 @@ current.pdf: $(wildcard in/Card*.PDF in/bmo*.pdf in/BMO*.pdf)
 ## Or sometimes do something else, but I no longer remember what
 ## The y number is going down from the top: more negative is down
 Sources += accounts.txt
-in/accounts.txt: accounts.txt
-	$(copy)
+in/accounts.txt: | accounts.txt
+	$(pipecopy)
 
 Ignore += atrim.txt
 atrim.txt: in/accounts.txt
