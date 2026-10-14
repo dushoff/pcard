@@ -49,10 +49,9 @@ current.pdf: $(wildcard in/Card*.PDF in/bmo*.pdf in/BMO*.pdf)
 
 ######################################################################
 
-## Make file list and check accounts
-## Add account numbers (tags) to the first page
-## Or sometimes do something else, but I no longer remember what
-## The y number is going down from the top: more negative is down
+### TAG
+## tag.pdf: in/accounts.txt
+
 Sources += accounts.txt
 in/accounts.txt: | accounts.txt
 	$(pipecopy)
@@ -61,8 +60,6 @@ Ignore += atrim.txt
 atrim.txt: in/accounts.txt
 	sed -e "s/##*  *.*//" $< > $@
 
-### TAG
-## tag.pdf: in/accounts.txt
 tag.pdf: atrim.txt.pdf current-0.pdf Makefile
 	cpdf -stamp-on $< -pos-left "0 -410" $(word 2, $^) -o $@
 
@@ -110,25 +107,17 @@ in/receipts.mk: | receipts.mk
 	$(pcopy)
 -include in/receipts.mk
 
-pcard.pdf: in/receipts.mk $(files)
-	pdfjam $(filter-out %.mk, $^) --outfile $@
-
-## downcall in/ ## , or copy directly to the target
-in/outbreak.pdf:
-	$(CP) in/github*.pdf $@
-in/bell.pdf:
-	$(CP) in/Bell*.pdf $@
-
-## mv in/register.pdf ~/Downloads ##
 Sources += receipts.mk
 
 ######################################################################
 
-## CHANGE date and submit
-## Use dtarget
+pcard.pdf: in/receipts.mk $(files)
+	pdfjam $(filter-out %.mk, $^) --outfile $@
 
-## Aug submitted to Michelle
-out/dushoff2026Aug.pdf: pcard.pdf
+## CHANGE date and dtarget to submit
+
+## Sep submitted to Michelle 2026 Oct 14 (Wed)
+out/dushoff2026Sep.pdf: pcard.pdf
 	$(copy)
 
 ######################################################################

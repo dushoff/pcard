@@ -2,4 +2,7 @@
 .br
 2,3: 20-590000-10323-30001 (001029760) ## PDA
 .br
-Correction for 3: 20-200041-10383-30000 (see attachment)
+
+20-655005-10323-30000 (seminar)
+
+### Correction for 3: 20-200041-10383-30000 (see attachment)
