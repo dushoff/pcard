@@ -15,10 +15,10 @@ Sources += notes.md todo.md flow.md cloud.md
 
 ######################################################################
 
-Makefile: 2609.month
+Makefile: 2610.month
 mirrors += out cloud
-tmirrors += 2609
-oldmirrors += 2601 2602 2603 2604 2605 2606 2607 2608
+tmirrors += 2610
+oldmirrors += 2601 2602 2603 2604 2605 2606 2607 2608 2609
 mirrors += $(tmirrors)
 
 ## Old stuff is living _only_ in the cloud (and the history) for now, witg?
@@ -94,7 +94,9 @@ bill.pdf: mark.pdf | in/mark.mk
 ## pcard.pdf: in/receipts.mk bill.pdf
 
 ## in/bell.pdf
+## in/bellX.pdf
 ## in/outbreak.pdf
+## in/seminar.pdf
 
 ## in/equip.pdf
 ## in/meeting.pdf
